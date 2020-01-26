@@ -98,7 +98,7 @@ class PreguntasCuestionarioTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tipoDePregunta = indexPath.section
-        materiaSeleccionada = materias![indexPath.row]
+        pregunta = materiaSeleccionada?.preguntas[indexPath.row] 
         performSegue(withIdentifier: "MostrarDetallesPregunta", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }

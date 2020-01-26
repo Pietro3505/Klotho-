@@ -199,3 +199,9 @@ class NotasTVC: UITableViewController {
 
 }
 
+class notasCell: UITableViewCell {
+    @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var labelMateria: UILabel!
+    @IBOutlet weak var labelTarea: UILabel!
+    @IBOutlet weak var labelFechaDeEntrega: UILabel!
+}

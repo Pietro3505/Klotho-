@@ -4,7 +4,7 @@ import RealmSwift
 class DetallePreguntaVC: UIViewController {
     
     let realm = try! Realm()
-    
+    var pregunta : Pregunta?
     
     
     

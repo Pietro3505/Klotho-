@@ -26,7 +26,7 @@ class AjustesVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         canciones = realm.objects(Musica.self)
-        switchEncender.onTintColor    = UIColor("3D81AD")
+        switchEncender.onTintColor    = UIColor("#000000000000")
         viewLabel.layer.cornerRadius  = 20
         viewSlider.layer.cornerRadius = 20
         deleteAllProjectsOutlet.titleLabel?.font = UIFont(name: "DIN Alternate", size: 18)

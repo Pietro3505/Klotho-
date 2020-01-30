@@ -17,7 +17,7 @@ class NotasTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBarF(color: "#3D81AD")
+        navBarF(color: "#000000")
         if  materiaSeleccionada == nil {
             setBlankView()
         }
@@ -187,7 +187,7 @@ class NotasTVC: UITableViewController {
     }
     func navBarF (color : String) {
              guard let navBar       = navigationController?.navigationBar else {fatalError("Navigation controller no existe")}
-             guard let navBarColour = UIColor("#3D81AD") else { fatalError()}
+             guard let navBarColour = UIColor("#000000") else { fatalError()}
              navBar.barTintColor    = navBarColour
              navBar.tintColor       = UIColor.white
              let textAttributes     = [NSAttributedString.Key.font : UIFont(name: "DIN Alternate", size: 18), NSAttributedString.Key.foregroundColor:UIColor.white]

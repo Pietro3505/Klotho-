@@ -130,6 +130,7 @@ class cuestionarioVC: UIViewController {
             respuesta2O.isHidden = true
             contadorDePreguntas.isHidden = true
             respuesta4O.setTitle("Entendido", for: .normal)
+            respuesta4O.backgroundColor    = UIColor("#000000")
             if numeroDeAciertos >= numeroDePreguntas/2 && numeroDeAciertos < numeroDePreguntas  {
             preguntaL.text = "Tu numero total de aciertos es \(numeroDeAciertos) de \(preguntas?.count ?? 999) preguntas en total. Se puede decir que estas listo para tu evaluacion de \(materiaSeleccionada?.nombreMateria ?? "") sin embargo podes mejorar"
             } else if numeroDeAciertos < numeroDePreguntas/2 {
@@ -154,10 +155,10 @@ class cuestionarioVC: UIViewController {
             } else {
                 finalizar()
             }
-            respuesta1O.backgroundColor = UIColor("#3D81AD")
-            respuesta2O.backgroundColor = UIColor("#3D81AD")
-            respuesta3O.backgroundColor = UIColor("#3D81AD")
-            respuesta4O.backgroundColor = UIColor("#3D81AD")
+            respuesta1O.backgroundColor = UIColor("#000000")
+            respuesta2O.backgroundColor = UIColor("#000000")
+            respuesta3O.backgroundColor = UIColor("#000000")
+            respuesta4O.backgroundColor = UIColor("#000000")
             respuesta1O.isEnabled       = true
             respuesta2O.isEnabled       = true
             respuesta3O.isEnabled       = true
@@ -171,7 +172,7 @@ class cuestionarioVC: UIViewController {
         tiempoRestante -= 1
             if tiempoRestante <= 0 {
                 finalizar()
-                respuesta4O.backgroundColor = UIColor("#3D81AD")
+                respuesta4O.backgroundColor = .black
                 respuesta4O.isEnabled = true
                 timer?.invalidate()
                  timer = nil

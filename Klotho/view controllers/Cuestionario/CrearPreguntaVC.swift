@@ -27,10 +27,10 @@ class CrearPreguntaVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        switchR1.onTintColor = UIColor("#3D81AD")
-        switchR2.onTintColor = UIColor("#3D81AD")
-        switchR3.onTintColor = UIColor("#3D81AD")
-        switchR4.onTintColor = UIColor("#3D81AD")
+        switchR1.onTintColor = UIColor("#000000")
+        switchR2.onTintColor = UIColor("#000000")
+        switchR3.onTintColor = UIColor("#000000")
+        switchR4.onTintColor = UIColor("#000000")
         switchR1.isOn        = false
         switchR2.isOn        = false
         switchR3.isOn        = false

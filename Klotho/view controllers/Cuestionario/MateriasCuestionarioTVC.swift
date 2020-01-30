@@ -1,3 +1,11 @@
+//
+//  MateriasCuestionarioTVC.swift
+//  Klotho
+//
+//  Created by Pablo y Pietro on 1/28/20.
+//  Copyright © 2020 Pietro Pablo Producciones. All rights reserved.
+//
+
 import UIKit
 import RealmSwift
 
@@ -12,8 +20,8 @@ class MateriasCuestionarioTVC: UITableViewController {
     //MARK: Set Up
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBarF(color: "#3D81AD")
-        personalizacion(color: "#3D81AD")
+        navBarF(color: "#000000")
+        personalizacion(color: "#000000")
         materias = realm.objects(Materia.self).sorted(byKeyPath: "importanciaMateria", ascending: false)
         loadProjects()
         searchBar.showsCancelButton = false
@@ -59,7 +67,7 @@ class MateriasCuestionarioTVC: UITableViewController {
         let textFS = searchBar.value(forKey: "searchField") as? UITextField
         textFS?.font = UIFont(name: "DIN Alternate", size: 20)
         textFS?.textColor = UIColor.white
-        textFS?.backgroundColor = UIColor("#234D68")
+        textFS?.backgroundColor = UIColor("#000000")
           
       }
     
@@ -192,7 +200,7 @@ extension MateriasCuestionarioTVC : UISearchBarDelegate {
 
    func navBarF (color : String) {
     guard let navBar       = navigationController?.navigationBar else {fatalError("Navigation controller no existe")}
-    guard let navBarColour = UIColor("#3D81AD") else { fatalError()}
+    guard let navBarColour = UIColor("#000000") else { fatalError()}
     navBar.barTintColor    = navBarColour
     navBar.tintColor       = UIColor.white
     let textAttributes     = [NSAttributedString.Key.font : UIFont(name: "DIN Alternate", size: 18), NSAttributedString.Key.foregroundColor:UIColor.white]

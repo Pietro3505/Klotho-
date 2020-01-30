@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B59E56296F7FC069DB228DF5 /* Pods_Klotho.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E91A56DC1078D0E70EC8FA /* Pods_Klotho.framework */; };
 		D54D8AE423DCB65700DD386E /* InicioDeSesionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D8AE323DCB65700DD386E /* InicioDeSesionVC.swift */; };
+		D54D8AE623DE3E5A00DD386E /* InicioExitosoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54D8AE523DE3E5A00DD386E /* InicioExitosoVC.swift */; };
 		D59106B223D2911D00B21604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106B123D2911D00B21604 /* AppDelegate.swift */; };
 		D59106B423D2911D00B21604 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106B323D2911D00B21604 /* SceneDelegate.swift */; };
 		D59106BE23D2913400B21604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59106BC23D2913400B21604 /* LaunchScreen.storyboard */; };
@@ -29,7 +30,6 @@
 		D59106F823D29F7400B21604 /* cuestionarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106E523D29F7400B21604 /* cuestionarioVC.swift */; };
 		D59106F923D29F7400B21604 /* SeleccionarTipoPreguntaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106E623D29F7400B21604 /* SeleccionarTipoPreguntaVC.swift */; };
 		D59106FA23D29F7400B21604 /* DetallePreguntaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106E723D29F7400B21604 /* DetallePreguntaVC.swift */; };
-		D59106FB23D29F7400B21604 /* MateriasCuestionarioTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106E823D29F7400B21604 /* MateriasCuestionarioTVC.swift */; };
 		D59106FC23D29F7400B21604 /* PreguntasCuestionarioTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106E923D29F7400B21604 /* PreguntasCuestionarioTVC.swift */; };
 		D59106FD23D29F7400B21604 /* pruebaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106EA23D29F7400B21604 /* pruebaTableViewController.swift */; };
 		D59106FE23D29F7400B21604 /* CrearPreguntaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59106EB23D29F7400B21604 /* CrearPreguntaVC.swift */; };
@@ -53,6 +53,7 @@
 		D591074223D2A15600B21604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D591074123D2A15600B21604 /* Main.storyboard */; };
 		D591074423D2A34700B21604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D591074323D2A34700B21604 /* Assets.xcassets */; };
 		D5B2E32523D2B7E500A939D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5B2E32423D2B7E400A939D8 /* GoogleService-Info.plist */; };
+		F8167ECF23E1188500CB31A6 /* MateriasCuestionarioTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8167ECE23E1188500CB31A6 /* MateriasCuestionarioTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		73505D78D3008908B1C0C27F /* Pods-Klotho.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Klotho.debug.xcconfig"; path = "Target Support Files/Pods-Klotho/Pods-Klotho.debug.xcconfig"; sourceTree = "<group>"; };
 		78E91A56DC1078D0E70EC8FA /* Pods_Klotho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Klotho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54D8AE323DCB65700DD386E /* InicioDeSesionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioDeSesionVC.swift; sourceTree = "<group>"; };
+		D54D8AE523DE3E5A00DD386E /* InicioExitosoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioExitosoVC.swift; sourceTree = "<group>"; };
 		D59106AE23D2911D00B21604 /* Klotho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klotho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59106B123D2911D00B21604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D59106B323D2911D00B21604 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 		D59106E523D29F7400B21604 /* cuestionarioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cuestionarioVC.swift; sourceTree = "<group>"; };
 		D59106E623D29F7400B21604 /* SeleccionarTipoPreguntaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeleccionarTipoPreguntaVC.swift; sourceTree = "<group>"; };
 		D59106E723D29F7400B21604 /* DetallePreguntaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetallePreguntaVC.swift; sourceTree = "<group>"; };
-		D59106E823D29F7400B21604 /* MateriasCuestionarioTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MateriasCuestionarioTVC.swift; sourceTree = "<group>"; };
 		D59106E923D29F7400B21604 /* PreguntasCuestionarioTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreguntasCuestionarioTVC.swift; sourceTree = "<group>"; };
 		D59106EA23D29F7400B21604 /* pruebaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pruebaTableViewController.swift; sourceTree = "<group>"; };
 		D59106EB23D29F7400B21604 /* CrearPreguntaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrearPreguntaVC.swift; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		D591074123D2A15600B21604 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D591074323D2A34700B21604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5B2E32423D2B7E400A939D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8167ECE23E1188500CB31A6 /* MateriasCuestionarioTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateriasCuestionarioTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				D59106ED23D29F7400B21604 /* InicioVC.swift */,
 				D59106F723D29F7400B21604 /* AjustesVC.swift */,
 				D54D8AE323DCB65700DD386E /* InicioDeSesionVC.swift */,
+				D54D8AE523DE3E5A00DD386E /* InicioExitosoVC.swift */,
 				D59106E423D29F7400B21604 /* Cuestionario */,
 				D59106EE23D29F7400B21604 /* Notas */,
 			);
@@ -220,8 +223,8 @@
 				D59106E523D29F7400B21604 /* cuestionarioVC.swift */,
 				D59106E623D29F7400B21604 /* SeleccionarTipoPreguntaVC.swift */,
 				D59106E723D29F7400B21604 /* DetallePreguntaVC.swift */,
-				D59106E823D29F7400B21604 /* MateriasCuestionarioTVC.swift */,
 				D59106E923D29F7400B21604 /* PreguntasCuestionarioTVC.swift */,
+				F8167ECE23E1188500CB31A6 /* MateriasCuestionarioTVC.swift */,
 				D59106EA23D29F7400B21604 /* pruebaTableViewController.swift */,
 				D59106EB23D29F7400B21604 /* CrearPreguntaVC.swift */,
 				D59106EC23D29F7400B21604 /* CrearPreguntaVFVC.swift */,
@@ -410,6 +413,7 @@
 				D59106E223D29F6D00B21604 /* cuestionario.swift in Sources */,
 				D591070823D29F7400B21604 /* DetailedActivityViewController.swift in Sources */,
 				D59106E023D29F6D00B21604 /* Materia.swift in Sources */,
+				F8167ECF23E1188500CB31A6 /* MateriasCuestionarioTVC.swift in Sources */,
 				D59106DF23D29F6D00B21604 /* PreguntaVerdaderoFalso.swift in Sources */,
 				D591070323D29F7400B21604 /* CrearYEditarNotasYMateriasVC.swift in Sources */,
 				D59106DC23D29F6D00B21604 /* NotaDeVoz.swift in Sources */,
@@ -435,10 +439,10 @@
 				D59106FF23D29F7400B21604 /* CrearPreguntaVFVC.swift in Sources */,
 				D591070223D29F7400B21604 /* CalendarioVC.swift in Sources */,
 				D591070523D29F7400B21604 /* MateriasCalendarioTVC.swift in Sources */,
+				D54D8AE623DE3E5A00DD386E /* InicioExitosoVC.swift in Sources */,
 				D59106CE23D29F1E00B21604 /* BotonPregunta.swift in Sources */,
 				D591073F23D2A0CA00B21604 /* ActivityTableViewCell.swift in Sources */,
 				D59106CD23D29F1E00B21604 /* alertaP.swift in Sources */,
-				D59106FB23D29F7400B21604 /* MateriasCuestionarioTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

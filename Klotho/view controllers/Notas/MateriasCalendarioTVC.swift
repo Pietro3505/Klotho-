@@ -1,6 +1,8 @@
 import UIKit
 import RealmSwift
 
+var notasParaLaFechaSeleccionada : Results<Nota>?
+
 class MateriasCalendarioTVC: UITableViewController {
     
     //MARK: Properties
@@ -11,12 +13,14 @@ class MateriasCalendarioTVC: UITableViewController {
 
     //MARK: Set Up
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBarF(color: "#3D81AD")
+        navBarF(color: "#000000")
         formatter.dateStyle = .full
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCalendarProjectsTableView), name: NSNotification.Name(rawValue: "reloadCalendarTableView"), object: nil)
-        notasParaLaFechaSeleccionada = realm.objects(Nota.self).filter("fecha == %@", fechaCalendario ?? formatter.string(from: Date())).sorted(byKeyPath: "nota")
+        notasParaLaFechaSeleccionada = realm.objects(Nota.self).filter("fecha CONTAINS [cd]%@", fechaCalendario!).sorted(byKeyPath: "fecha", ascending: false)
 
         title = fechaCalendario ?? formatter.string(from: Date())
     }
@@ -31,22 +35,26 @@ class MateriasCalendarioTVC: UITableViewController {
             sinNotasPorFechaAlert.addAction(entendidoAction)
             self.present(sinNotasPorFechaAlert, animated: true)
         } else {
-                    print(notasParaLaFechaSeleccionada!.first!.nota)
+            print(notasParaLaFechaSeleccionada!.first!.nota)
+            print(notasParaLaFechaSeleccionada?.count)
+            notasParaLaFechaSeleccionada = realm.objects(Nota.self).filter("fecha CONTAINS [cd]%@", fechaCalendario!).sorted(byKeyPath: "fecha", ascending: false)
+            tableView.reloadData()
         }
     }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return notasParaLaFechaSeleccionada!.count
+        print(notasParaLaFechaSeleccionada?.count)
+        return notasParaLaFechaSeleccionada!.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ProjectTableViewCell()
-            cell.textLabel?.text = notasParaLaFechaSeleccionada![indexPath.row].nota
-        cell.detailTextLabel?.text = notasParaLaFechaSeleccionada![indexPath.row].materiaPadre[indexPath.row].nombreMateria
+        print("treess")
+            let cell = ProjectTableViewCell()
         cell.textLabel?.font = UIFont(name: "DIN Alternate", size: 18)
+        cell.textLabel?.text = notasParaLaFechaSeleccionada![indexPath.row].nota  
         return cell
     }
 
@@ -69,7 +77,7 @@ class MateriasCalendarioTVC: UITableViewController {
     }
    func navBarF (color : String) {
       guard let navBar       = navigationController?.navigationBar else {fatalError("Navigation controller no existe")}
-      guard let navBarColour = UIColor("#3D81AD") else { fatalError()}
+      guard let navBarColour = UIColor(color) else { fatalError()}
       navBar.barTintColor    = navBarColour
       navBar.tintColor       = UIColor.white
       let textAttributes     = [NSAttributedString.Key.font : UIFont(name: "DIN Alternate", size: 18), NSAttributedString.Key.foregroundColor:UIColor.white]
@@ -86,7 +94,7 @@ class MateriasCalendarioTVC: UITableViewController {
             let action = UIAlertAction(title: "Eliminar", style: .destructive) { (action) in
                 self.eliminarMateriasDelRealm(whatToDelete: self.notasParaLaFechaSeleccionada![indexPath.row])
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
-                self.notasParaLaFechaSeleccionada = self.realm.objects(Nota.self).filter("fecha == %@", fechaCalendario!).sorted(byKeyPath: "nota")
+                self.notasParaLaFechaSeleccionada = self.realm.objects(Nota.self).filter("fecha CONTAINS [cd]%@", fechaCalendario!).sorted(byKeyPath: "fecha", ascending: true)
                 self.tableView.reloadData()
             }
             let cancelarAction = UIAlertAction(title: "Cancelar", style: .cancel) { (action) in

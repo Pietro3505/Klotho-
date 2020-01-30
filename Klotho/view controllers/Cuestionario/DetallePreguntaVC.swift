@@ -4,7 +4,8 @@ import RealmSwift
 class DetallePreguntaVC: UIViewController {
     
     let realm = try! Realm()
-    var pregunta : Pregunta?
+    
+    
     
     
     
@@ -23,7 +24,7 @@ class DetallePreguntaVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //if tipoDePregunta == 0 {
+        if tipoDePregunta == 0 {
             title                = "\(materiaSeleccionada?.nombreMateria ?? "")"
             preguntaLabel.text   = "   \(pregunta?.pregunta ?? "")"
             respuesta1Label.text = "   \(pregunta?.respuesta1 ?? "")"
@@ -31,16 +32,16 @@ class DetallePreguntaVC: UIViewController {
             respuesta3Label.text = "   \(pregunta?.respuesta3 ?? "")"
             respuesta4Label.text = "   \(pregunta?.respuesta4 ?? "")"
             
-        //} else {
-//            respuesta4View.isHidden = true
-//            respuesta4Label.isHidden = true
-//            respuesta3View.isHidden = true
-//            respuesta3Label.isHidden = true
-//            vistaRespuestas.backgroundColor = .groupTableViewBackground
-//            preguntaLabel.text = "   \(preguntaVF?.afirmacion ?? "")"
-//            respuesta1Label.text = "Verdadero"
-//            respuesta4Label.text = "Falso"
-        //}
+        } else {
+            respuesta4View.isHidden = true
+            respuesta4Label.isHidden = true
+            respuesta3View.isHidden = true
+            respuesta3Label.isHidden = true
+            vistaRespuestas.backgroundColor = UIColor("#F2F2F7")
+            preguntaLabel.text = "   \(preguntaVF?.afirmacion ?? "")"
+            respuesta1Label.text = "Verdadero"
+            respuesta2Label.text = "Falso"
+        }
         setearColorRespuestas()
         respuesta1View.layer.cornerRadius = 20
         respuesta2View.layer.cornerRadius = 20
@@ -50,7 +51,7 @@ class DetallePreguntaVC: UIViewController {
     
 
     func setearColorRespuestas() {
-//        if tipoDePregunta == 0 {
+        if tipoDePregunta == 0 {
             if pregunta?.correcto1 ==  false {
                 respuesta1View.backgroundColor = UIColor("#D65030")
             } else  {
@@ -71,15 +72,15 @@ class DetallePreguntaVC: UIViewController {
             } else  {
                 respuesta4View.backgroundColor = UIColor("#1DB689")
             }
-//        } else {
-//            if  preguntaVF?.respuesta == true {
-//                respuesta1View.backgroundColor = UIColor("#1DB689")
-//                respuesta2View.backgroundColor = UIColor("#D65030")
-//            } else {
-//                respuesta1View.backgroundColor = UIColor("#D65030")
-//                respuesta2View.backgroundColor = UIColor("#1DB689")
-//            }
-//        }
+        } else {
+            if  preguntaVF?.respuesta == true {
+                respuesta1View.backgroundColor = UIColor("#1DB689")
+                respuesta2View.backgroundColor = UIColor("#D65030")
+            } else {
+                respuesta1View.backgroundColor = UIColor("#D65030")
+                respuesta2View.backgroundColor = UIColor("#1DB689")
+            }
+        }
        
     }
 }

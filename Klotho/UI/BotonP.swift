@@ -16,11 +16,12 @@ class BotonP: UIButton {
     
     func setupButton()  {
         sombras()
-        backgroundColor    = UIColor("#1C5262")
-        titleLabel?.font   = UIFont(name: "DIN Alternate", size: 25)
-        layer.cornerRadius = 30
-        layer.borderWidth  = 0.0
-        layer.borderColor  = backgroundColor?.cgColor
+        backgroundColor       = UIColor("#000000")
+        titleLabel?.font      = UIFont(name: "DIN Alternate", size: 25)
+        titleLabel?.textColor = .white
+        layer.cornerRadius    = 30
+        layer.borderWidth     = 0.0
+        layer.borderColor     = backgroundColor?.cgColor
         setTitleColor(UIColor.white, for: .normal)
         setTitle("", for: .normal)
     }

@@ -11,18 +11,20 @@ class InicioDeSesionVC: UIViewController, GIDSignInDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    Auth.auth().addStateDidChangeListener { (auth, user) in
-        if Auth.auth().currentUser != nil {
-            print("efe")
-            
-        } else {
-          // No user is signed in.
-          // ...
-        }
-        }
+ 
         
     }
- 
+    override func viewDidAppear(_ animated: Bool) {
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+             if Auth.auth().currentUser != nil {
+                 self.performSegue(withIdentifier: "inicioExitoso", sender: self)
+                 print(1)
+             } else {
+             }
+             }
+    }
+    
+   
     @IBAction func signInButtonAction(_ sender: UIButton) {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -31,7 +33,6 @@ class InicioDeSesionVC: UIViewController, GIDSignInDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-
     if let error = error {
       print(error)
       return
@@ -44,15 +45,14 @@ class InicioDeSesionVC: UIViewController, GIDSignInDelegate {
           print(error)
           return
         }
+        
       }
      
   }
   
   
-  
   func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-      // Perform any operations when the user disconnects from app here.
-      // ...
+     
   }
   
 }

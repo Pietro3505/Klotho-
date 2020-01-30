@@ -3,6 +3,8 @@ import Firebase
 import RealmSwift
 import GoogleSignIn
 
+let db = Firestore.firestore()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -28,10 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(error)
         return
       }
-
+        
       guard let authentication = user.authentication else { return }
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                         accessToken: authentication.accessToken)
+        print(credential)
     }
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
       

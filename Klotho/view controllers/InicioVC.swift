@@ -1,7 +1,7 @@
-import UIKit
+import FirebaseAuth
 import RealmSwift
 import HexColors
-
+import UIKit
 
 
 
@@ -29,7 +29,7 @@ class InicioVC: UIViewController {
             iView.image = UIImage(named: "Imagen Iphone")
         }
         if UIDevice().userInterfaceIdiom == .pad {
-            iView.image = UIImage(named: "Imagen Ipad")
+            iView.image = UIImage(named: "Imagen Iphone")
         if UIDevice().orientation == .landscapeLeft  {
              iView.image = UIImage(named: "Imagen Ipad")
         } else if UIDevice().orientation == .landscapeRight {
@@ -58,6 +58,16 @@ class InicioVC: UIViewController {
              }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+                  if Auth.auth().currentUser != nil {
+                     
+                      print(1)
+                  } else {
+                    
+                  }
+                  }
+    }
     
     @IBAction func calendarAction(_ sender: UIButton) {
         performSegue(withIdentifier: "toCalendarVC", sender: self)

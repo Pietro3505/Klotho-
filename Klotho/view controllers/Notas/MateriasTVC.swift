@@ -16,15 +16,13 @@ class MateriasTVC: UITableViewController {
     //MARK: Set Up
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBarF(color: "#3D81AD")
+        navBarF(color: "#000000")
         materias = realm.objects(Materia.self).sorted(byKeyPath: "importanciaMateria", ascending: false)
         cargarMaterias()
         searchBar.showsCancelButton = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(reladMateriasTableView), name: NSNotification.Name(rawValue: "reloadProjectsTableView"), object: nil)
-
-    
-        personalizacion(color: "#3D81AD")
+        personalizacion(color: "#000000")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -83,7 +81,7 @@ class MateriasTVC: UITableViewController {
           let textFS = searchBar.value(forKey: "searchField") as? UITextField
           textFS?.font = UIFont(name: "DIN Alternate", size: 20)
           textFS?.textColor = UIColor.white
-          textFS?.backgroundColor = UIColor("#234D68")
+          textFS?.backgroundColor = UIColor("#000000")
       }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -150,7 +148,7 @@ class MateriasTVC: UITableViewController {
     }
     func navBarF (color : String) {
        guard let navBar       = navigationController?.navigationBar else {fatalError("Navigation controller no existe")}
-       guard let navBarColour = UIColor("#3D81AD") else { fatalError()}
+       guard let navBarColour = UIColor("#000000") else { fatalError()}
        navBar.barTintColor    = navBarColour
        navBar.tintColor       = UIColor.white
        let textAttributes     = [NSAttributedString.Key.font : UIFont(name: "DIN Alternate", size: 18), NSAttributedString.Key.foregroundColor:UIColor.white]
@@ -158,7 +156,7 @@ class MateriasTVC: UITableViewController {
        navBar.titleTextAttributes      = textAttributes as [NSAttributedString.Key : Any]
        navBar.largeTitleTextAttributes = textAttributes1 as [NSAttributedString.Key : Any]
          }
-    
+
 
 
 }

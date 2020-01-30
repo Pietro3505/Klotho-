@@ -86,19 +86,15 @@ class PreguntasCuestionarioTVC: UITableViewController {
     
     
     //MARK: Acciones
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MostrarDetallesPregunta" {
-            let indexPath = tableView.indexPathForSelectedRow!
-            pregunta = preguntas?[indexPath.row]
-            preguntaVF = preguntasVF?[indexPath.row]
-        }
-    }
-    
+ 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tipoDePregunta = indexPath.section
-        pregunta = materiaSeleccionada?.preguntas[indexPath.row] 
+        tipoDePregunta = indexPath.section
+        if tipoDePregunta == 0 {
+            pregunta = materiaSeleccionada?.preguntas[indexPath.row]
+        } else {
+            preguntaVF = materiaSeleccionada?.preguntasVF[indexPath.row]
+        }
         performSegue(withIdentifier: "MostrarDetallesPregunta", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -126,7 +122,7 @@ class PreguntasCuestionarioTVC: UITableViewController {
     }
     
     @IBAction func empezarCuestionario(_ sender: Any) {
-        if preguntas != nil && preguntas?.count != 0 {
+        if preguntas?.count != 0 || preguntasVF?.count != 0 {
             performSegue(withIdentifier: "MostrarCuestionario", sender: self)
         } else {
             let selectProjectFirstAlert = UIAlertController(title: "Parece que te falta algo:", message: "no has añadido preguntas todavia o seleccionado una materia", preferredStyle: .alert)

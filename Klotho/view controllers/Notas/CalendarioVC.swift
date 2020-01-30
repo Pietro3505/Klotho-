@@ -1,12 +1,12 @@
 import UIKit
 import FSCalendar
-
+import RealmSwift
 
 class CalendarioVC: UIViewController {
 
     let formatter = DateFormatter()
     fileprivate weak var calendar: FSCalendar!
-    
+    let realm = try! Realm()
 
     //MARK: Set Up
     
@@ -18,10 +18,10 @@ class CalendarioVC: UIViewController {
         calendar.dataSource      = self
         calendar.delegate        = self
         self.calendar            = calendar
-        calendar.backgroundColor = .groupTableViewBackground
+        calendar.backgroundColor = .lightGray
         view.addSubview(calendar)
         constrainsCalendario()
-        
+        fechaCalendario = formatter.string(from: Date.init())
     }
     
     
@@ -44,6 +44,7 @@ extension CalendarioVC : FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         fechaCalendario = formatter.string(from: date)
+        notasParaLaFechaSeleccionada = realm.objects(Nota.self).filter("fecha CONTAINS [cd]%@", fechaCalendario!).sorted(byKeyPath: "fecha", ascending: true)
         performSegue(withIdentifier: "showProjectsForDate", sender: self)
     }
   

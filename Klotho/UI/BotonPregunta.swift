@@ -14,7 +14,7 @@ class BotonPregunta : UIButton {
     
     func setupButton()  {
         sombras()
-        backgroundColor    = UIColor("#3D81AD")
+        backgroundColor    = UIColor("#000000")
         titleLabel?.font   = UIFont(name: "DIN Alternate", size: 20)
         layer.cornerRadius = 20
         layer.borderWidth  = 0.0
